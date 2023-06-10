@@ -12,7 +12,7 @@ const mongoose = require('mongoose');
 mongoose.connect(DATABASE_URL, { useNewUrlParser: true });
 const db = mongoose.connection;
 db.on('error', (error) => console.error(error));
-db.once('open', () => console.log('Databse connected'))
+db.once('open', () => console.log('Mongoose online'))
 
 app.use(express.json())
 
