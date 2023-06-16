@@ -17,7 +17,7 @@ router.post("/signup", async (req, res, next) => {
     }
   });
 
-  const salt = await bcrypt.genSaltSync(10);
+  const salt = bcrypt.genSaltSync(10);
   const hashedPassword = await bcrypt.hash(req.body.password, salt);
 
   const user = new User({
@@ -59,7 +59,6 @@ router.post("/login", (req, res, next) => {
       return bcrypt.compare(req.body.password, user.password);
     })
     .then((result) => {
-      console.log(fetchedUser);
       if (!result) {
         return res.status(401).json({
           message: "Auth failed inccorect password",
