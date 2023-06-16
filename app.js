@@ -1,4 +1,4 @@
-DATABASE_URL = "mongodb+srv://rami:H8kuEBvvnSFWNPk1@todolist.rq1azor.mongodb.net/?directConnection=true";
+DATABASE_URL = "mongodb+srv://rami:H8kuEBvvnSFWNPk1@todolist.rq1azor.mongodb.net/?directConnection=true&ssl=false";
 
 const express = require("express");
 const app = express();
